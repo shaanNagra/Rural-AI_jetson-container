@@ -3,27 +3,34 @@ services:
   jet1:
     build: .
 
-    container_name: jet1-container
-  
+    container_name: jet1 
+    
     volumes:
       - "/tmp/.X11-unix:/tmp/.X11-unix"
       - "/tmp/argus_socket:/tmp/argus_socket"
+      #- "~/output:/app/output/"
+      #- "~/sensor-sim:/app/sensor-sim/"
 
     devices: 
-      -/dev/video0
+      - "/dev/video0:/dev/video0"
 
-    networks:
-      - host
+    # -network host
+    network_mode: "host"
     
-    runtime: nvidia
-    #command: nvidia-smi
-    deploy:
-      resources:
-        reservations:
-          memory: 3.5Gb
-          devices:
-          - driver: nvidia
-            capabilities: [gpu]
+     #runtime: nvidia
+     #command: nvidia-smi
+     #deploy: 
+     # resources:
+     #  reservations:
+     #    memory: 3.5Gb
+     #    devices:
+     #     - driver: nvidia
+     #     capabilities: [gpu]
 
     environment:
-      - DISPLAY
+      - "DISPLAY"
+
+    #stdin_open: true
+    tty: true
+    #entrypoint: /bin/bash
+    #command: "/bin/bash"
