@@ -1,0 +1,29 @@
+version: '3'
+services:
+  jet1:
+    build: .
+
+    container_name: jet1-container
+  
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+      - "/tmp/argus_socket:/tmp/argus_socket"
+
+    devices: 
+      -/dev/video0
+
+    networks:
+      - host
+    
+    runtime: nvidia
+    #command: nvidia-smi
+    deploy:
+      resources:
+        reservations:
+          memory: 3.5Gb
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
+
+    environment:
+      - DISPLAY
