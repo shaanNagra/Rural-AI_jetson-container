@@ -26,12 +26,12 @@ RUN pip3 install --no-cache-dir --upgrade pip && \
 
 #-----------------SETUP DIRECTORIES ----------
 # funcx looks for token at root/.funcx
-COPY ~/.funcx/ /root/.funcx 
-COPY ~/JetsonYolo/ ./JetsonYolo
+#COPY ~/.funcx/ /root/.funcx 
+#COPY ~/JetsonYolo/ ./JetsonYolo
 #COPY sensor-sim/ ./sensor-sim
 
-VOLUME ~/output:/app/output/
-VOLUME ~/sensor-sim:/app/sensor-sim/
+#VOLUME ~/output:/app/output/
+#VOLUME ~/sensor-sim:/app/sensor-sim/
 
 #set env to use utf-8 over ascii as python issues arise otherwise
 ENV LC_ALL C.UTF-8

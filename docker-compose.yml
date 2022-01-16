@@ -8,9 +8,11 @@ services:
     volumes:
       - "/tmp/.X11-unix:/tmp/.X11-unix"
       - "/tmp/argus_socket:/tmp/argus_socket"
-      #- "~/output:/app/output/"
-      #- "~/sensor-sim:/app/sensor-sim/"
-
+      - "~/output:/app/output/"
+      - "~/sensor-sim:/app/sensor-sim/"
+      - "~/.funcx/:/root/.funcx/"
+      - "~/JetsonYolo:./JetsonYolo"
+      
     devices: 
       - "/dev/video0:/dev/video0"
 
