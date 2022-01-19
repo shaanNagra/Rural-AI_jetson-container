@@ -11,7 +11,8 @@ services:
       - "~/output:/app/output/"
       - "~/sensor-sim:/app/sensor-sim/"
       - "~/.funcx/:/root/.funcx/"
-      - "~/JetsonYolo:./JetsonYolo"
+      - "~/JetsonYolo:/app/JetsonYolo/"
+      - "~/yolov5:/app/yolov5"
       
     devices: 
       - "/dev/video0:/dev/video0"

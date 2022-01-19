@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../JetsonYolo"
+		},
+		{
+			"path": "../sensor-sim"
+		},
+		{
+			"path": "../yolov5"
+		}
+	],
+	"settings": {}
+}
