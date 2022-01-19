@@ -1,35 +1,27 @@
 version: '3'
 services:
-  jet1:
+  jetx:
     build: .
 
-    container_name: jet1 
+    container_name: jetx 
     
     volumes:
+      
       - "/tmp/.X11-unix:/tmp/.X11-unix"
       - "/tmp/argus_socket:/tmp/argus_socket"
-      - "~/output:/app/output/"
-      - "~/sensor-sim:/app/sensor-sim/"
+      
       - "~/.funcx/:/root/.funcx/"
-      - "~/JetsonYolo:/app/JetsonYolo/"
-      - "~/yolov5:/app/yolov5"
+      
+      - "~/SP21/output:/app/output/"
+      - "~/SP21/sensor-sim:/app/sensor-sim/"
+      - "~/SP21/JetsonYolo:/app/JetsonYolo/"
+      - "~/SP21/yolov5:/app/yolov5"
       
     devices: 
       - "/dev/video0:/dev/video0"
 
-    # -network host
     network_mode: "host"
     
-     #runtime: nvidia
-     #command: nvidia-smi
-     #deploy: 
-     # resources:
-     #  reservations:
-     #    memory: 3.5Gb
-     #    devices:
-     #     - driver: nvidia
-     #     capabilities: [gpu]
-
     environment:
       - "DISPLAY"
 

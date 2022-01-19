@@ -2,7 +2,6 @@
 
 # nividia ml image, tensorflow and most ml python libraires etc.
 FROM nvcr.io/nvidia/l4t-ml:r32.6.1-py3
-#FROM jetyolo:latest
 
 #-------------------APT-PACKAGES-------------------
 RUN apt-get update && apt-get install -y \
