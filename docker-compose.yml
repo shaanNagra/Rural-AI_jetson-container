@@ -16,9 +16,10 @@ services:
       - "~/SP21/sensor-sim:/app/sensor-sim/"
       - "~/SP21/JetsonYolo:/app/JetsonYolo/"
       - "~/SP21/yolov5:/app/yolov5"
+      - "~/SP21/extra:/app/extra"
       
-    devices: 
-      - "/dev/video0:/dev/video0"
+    #devices: 
+      #- "/dev/video0:/dev/video0"
 
     network_mode: "host"
     

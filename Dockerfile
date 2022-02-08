@@ -14,6 +14,9 @@ RUN apt-get update && apt-get install -y \
 # change the directory to /usr/src/app
 WORKDIR /app
 
+#set env to use utf-8 over ascii as python issues arise otherwise
+ENV LC_ALL C.UTF-8
+
 #--------------------PYTHON------------------------
 # copy the requirements.txt into /usr/src/app
 COPY requirements.txt ./
@@ -21,6 +24,10 @@ COPY requirements.txt ./
 # requirments main two python libraires are funcx and funcx-endpoints
 RUN pip3 install --no-cache-dir --upgrade pip && \
     pip3 install --no-cache-dir -r requirements.txt
+
+#RUN pip3 install --upgrade tensorflow
+RUN pip3 install keras==2.2.4
+#RUN pip3 install tensorflow-gpu
 
 
 #-----------------SETUP DIRECTORIES ----------
@@ -33,11 +40,16 @@ RUN pip3 install --no-cache-dir --upgrade pip && \
 #VOLUME ~/sensor-sim:/app/sensor-sim/
 
 #set env to use utf-8 over ascii as python issues arise otherwise
-ENV LC_ALL C.UTF-8
+#ENV LC_ALL C.UTF-8
+
+RUN pip3 install scp
+RUN pip3 install paramiko
+RUN apt install -y openssh-client
 
 #    funcx-endpoint start default && \
 #    /bin/bash
 
+ENV PYTHONPATH="${PYTHONPATH}:/app/extra/DeepWeeds/deepweeds.py"
 
 ENTRYPOINT funcx-endpoint start default && \ 
            /bin/bash

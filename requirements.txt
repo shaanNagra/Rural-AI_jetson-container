@@ -2,3 +2,6 @@ funcx
 funcx_endpoint
 seaborn>=0.11.0
 tqdm
+
+keras>=2.2.4
+scikit-image>=0.14.1
