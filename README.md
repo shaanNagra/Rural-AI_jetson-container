@@ -12,24 +12,24 @@ jetson nano container that runs a funcx endpoint for use in rural ai project
     |      ...
     |
     | -- SP21_jetson-container/
-                |
-                | -- Input/
-                |       |
-                |       | -- DeepWeeds/
-                |               |
-                |               | -- Train/
-                |               | -- Inference/
-                |               | -- Labels.csv
-                | -- Output/
-                |       |
-                |       | -- DeepWeeds/
-                |
-                | -- Container/
-                |       |
-                |       | -- Dockerfile
-                |       | -- docker-compose.yml
-                |       | -- requirements.txt
-                |
-                | -- Xtra/
-                |
+    |       |
+    |       | -- Input/
+    |       |       |
+    |       |       | -- DeepWeeds/
+    |       |               |
+    |       |               | -- Train/
+    |       |               | -- Inference/
+    |       |               | -- Labels.csv
+    |       | -- Output/
+    |       |       |
+    |       |       | -- DeepWeeds/
+    |       |
+    |       | -- Container/
+    |       |       |
+    |       |       | -- Dockerfile
+    |       |       | -- docker-compose.yml
+    |       |       | -- requirements.txt
+    |       |
+    |       | -- Xtra/
+    |       |
 ```

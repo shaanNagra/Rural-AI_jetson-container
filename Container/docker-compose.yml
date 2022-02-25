@@ -12,11 +12,9 @@ services:
       
       - "~/.funcx/:/root/.funcx/"
       
-      - "~/SP21/output:/app/output/"
-      - "~/SP21/sensor-sim:/app/sensor-sim/"
-      - "~/SP21/JetsonYolo:/app/JetsonYolo/"
-      - "~/SP21/yolov5:/app/yolov5"
-      - "~/SP21/extra:/app/extra"
+      - "~/SP21_jetson-container/Input:/app/Input/"
+      - "~/SP21_jetson-container/Output:/app/Output/"
+      - "~/SP21_jetson-container/Xtra:/app/Xtra"
       
     #devices: 
       #- "/dev/video0:/dev/video0"
