@@ -31,5 +31,7 @@ jetson nano container that runs a funcx endpoint for use in rural ai project
     |       |       | -- requirements.txt
     |       |
     |       | -- Xtra/
-    |       |
+    |       |       |
+    |       |       | -- img_2_nparray.py
+    |       |       | -- jtop_logger.py
 ```
